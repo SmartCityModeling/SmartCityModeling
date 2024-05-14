@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// This class controlls the UI of the Station-Objects inside the simulation.
 /// </summary>
-public class DropDownHandler : MonoBehaviour
+public class DropDownHandlerSample : MonoBehaviour
 {
     public GameObject DropDownText;
     public GameObject SearchResultsDropdown;
