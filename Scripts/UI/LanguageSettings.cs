@@ -8,6 +8,7 @@ using UnityEngine;
 public class LanguageSettings : MonoBehaviour
 {
     [SerializeField] List<GameObject> UI_Eng;
+    [SerializeField] List<GameObject> UI_Simplified_Chinese;
 
     // Standard Language is English.
     public static string Language = "English";
@@ -17,6 +18,10 @@ public class LanguageSettings : MonoBehaviour
         if (Language == "English")
         {
             EnglishUI();
+        }
+        else if (Language == "SimplifiedChinese")
+        {
+            SimplifiedChineseUI();
         }
     }
 
@@ -28,8 +33,22 @@ public class LanguageSettings : MonoBehaviour
 
         foreach (var obj in UI_Eng)
            obj.SetActive(true);
+        foreach (var obj in UI_SimplifiedChinese)
+            obj.SetActive(false);
 
         Language = "English";
     }
+    /// <summary>
+    /// Switches all UI-Elements to Simplified Chinese.
+    /// </summary>
+    public void ChineseUI()
+    {
+        foreach (var obj in UI_Eng)
+            obj.SetActive(false);
 
+        foreach (var obj in UI_SimplifiedChinese)
+            obj.SetActive(true);
+
+        Language = "SimplifiedChinese";
+    }
 }
